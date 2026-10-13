@@ -1,0 +1,11 @@
+# Entorno virtual
+.venv/
+
+# Datos: no se suben al repo (licencia y tamaño). Se descargan con el paso 0.4.
+data/raw/*
+!data/raw/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
