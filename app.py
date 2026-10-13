@@ -139,6 +139,7 @@ with tab_mapa:
             lat="Latitude",
             lon="Longitude",
             hover_data={"RSRP": True, "SNR": True, "NetworkMode": True, "CellID": True},
+            center=dict(lat=geo["Latitude"].mean(), lon=geo["Longitude"].mean()),
             zoom=12,
             height=600,
             map_style="carto-positron",
