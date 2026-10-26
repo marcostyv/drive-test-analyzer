@@ -20,8 +20,16 @@ def cargar_csv(ruta: str | Path) -> pd.DataFrame:
       - ¿De qué tipo es la columna Timestamp?
       - ¿Hay valores de RSRP físicamente imposibles?
     """
-    df = pd.read_csv(ruta)
+    df = pd.read_csv(ruta, na_values='-') ## Añadimos el argumento de la función de leer csv para que los valores '-' se conviertan en un valor NaN (sin valor), y por tanto los ignore. 
+    df["Timestamp"] = pd.to_datetime(df["Timestamp"], format="%Y.%m.%d_%H.%M.%S") ## Además, es importante que la columna Timestamp esté en formato datetime64[us]. Esto lo hace la función pd.to_datetime.
+    ## Estas funciones pueden tener dentro otras columnas o filas! El tipo de dato siempre es ese que he dicho, que es el tiempo en us desde un punto de referencia (enero de 1970) para así operar con fechas
+    ## de forma muy sencilla... Lo del formato es para ayudar a pandas a que lo entienda directamente, ya que a veces cada app (como G-NetTrack) tiene su formato de fecha.
+
+    ## Para "2019.12.14_10.16.30" sería "%Y.%m.%d_%H.%M.%S". Sabes?
+    
     return df
+
+  ### Ahora sí, los tipos de datos van a ser correctos en el df. Se verán con df.dtypes. Las fechas en foramto "datetime64[us]", los PING_AVG en formato "Float64", etc. Preparamos correctamente un dataset/dataframe!
 
 
 def cargar_todos(carpeta: str | Path) -> pd.DataFrame:
