@@ -1,6 +1,6 @@
 # Drive Test Analyzer
 
-This repo is a Streamlit application which analyses drive-tests from the dataset "Raca et al., MMSys 2020, Cork, Ireland" [github.com/uccmisl/5gdataset](url), showing graphs, histograms and a map that highlights colour-codes RSRP coverage (Excellent/Good/Fair/Poor) along the routes.
+This repo is a Streamlit application which analyses drive-tests from the dataset "Raca et al., MMSys 2020, Cork, Ireland" [https://github.com/uccmisl/5gdataset](url), showing graphs, histograms and a map that highlights colour-codes RSRP coverage (Excellent/Good/Fair/Poor) along the routes.
 
 
 It takes a CSV file and prepares it by modifying some data types and cleaning out-of-range values, such as RSRP (3GPP reporting range). Thus, each CSV is prepared for data analysis, calculation and graphics.
