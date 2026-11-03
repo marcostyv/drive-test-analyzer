@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="450" viewBox="0 0 680 450" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x="0" y="0" width="680" height="450" rx="16" fill="#FFFFFF"/>
+  <rect x="40" y="30" width="600" height="290" rx="16" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="60" y="54" font-size="14" font-weight="600" fill="#2C2C2A">Librería: término general (módulo o paquete)</text>
+
+  <rect x="60" y="70" width="270" height="230" rx="12" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="76" y="92" font-size="14" font-weight="600" fill="#3C3489">Paquete: pandas/</text>
+  <text x="76" y="280" font-size="12" fill="#534AB7">+ __init__.py, series.py, ...</text>
+
+  <rect x="80" y="104" width="230" height="136" rx="10" fill="#E1F5EE" stroke="#0F6E56"/>
+  <text x="96" y="126" font-size="14" font-weight="600" fill="#085041">Módulo: frame.py</text>
+  <text x="96" y="144" font-size="12" fill="#0F6E56">Un fichero .py</text>
+
+  <rect x="100" y="165" width="190" height="56" rx="8" fill="#FAECE7" stroke="#993C1D"/>
+  <text x="195" y="190" font-size="14" font-weight="600" fill="#712B13" text-anchor="middle">Clase: DataFrame</text>
+  <text x="195" y="208" font-size="12" fill="#993C1D" text-anchor="middle">Plantilla</text>
+
+  <rect x="350" y="70" width="270" height="230" rx="12" fill="#E1F5EE" stroke="#0F6E56"/>
+  <text x="366" y="92" font-size="14" font-weight="600" fill="#085041">Módulo: pathlib.py</text>
+  <text x="366" y="110" font-size="12" fill="#0F6E56">Un solo fichero .py</text>
+
+  <rect x="390" y="165" width="190" height="56" rx="8" fill="#FAECE7" stroke="#993C1D"/>
+  <text x="485" y="190" font-size="14" font-weight="600" fill="#712B13" text-anchor="middle">Clase: Path</text>
+  <text x="485" y="208" font-size="12" fill="#993C1D" text-anchor="middle">Plantilla</text>
+
+  <line x1="195" y1="300" x2="195" y2="356" stroke="#888780" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="485" y1="300" x2="485" y2="356" stroke="#888780" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="80" y="360" width="230" height="56" rx="8" fill="#FBEAF0" stroke="#993556"/>
+  <text x="195" y="385" font-size="14" font-weight="600" fill="#72243E" text-anchor="middle">Objeto: df</text>
+  <text x="195" y="403" font-size="12" fill="#993556" text-anchor="middle">df = pd.DataFrame(...)</text>
+
+  <rect x="370" y="360" width="230" height="56" rx="8" fill="#FBEAF0" stroke="#993556"/>
+  <text x="485" y="385" font-size="14" font-weight="600" fill="#72243E" text-anchor="middle">Objeto: datos</text>
+  <text x="485" y="403" font-size="12" fill="#993556" text-anchor="middle">datos = Path("../data")</text>
+</svg>
