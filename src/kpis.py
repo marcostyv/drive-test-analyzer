@@ -26,4 +26,18 @@ def clasificar_cobertura(rsrp: pd.Series) -> pd.Series:
     Restricción: hazlo SIN bucles for. Pista: pd.cut (fíjate en el
     parámetro `right` para que los límites caigan en la clase correcta).
     """
-    raise NotImplementedError
+
+    ## Saco los valores de los umbrales definidos arriba. Los de valor "None", como es el caso de la clave "Mala", no los incluyo. (Ver UMBRALES_RSP)
+    umbrales = [v for v in UMBRALES_RSRP.values() if v is not None] ## Esta expresión devuelve una lista al estar entre corchetes cuadrados.
+                                                                    ## Lo que hace crear un umbrales = [], y hacer un umbrales.append() a cada valor del bucle (Con la condición del if)
+    umbrales.sort(reverse=False) ## Para ponerla de MENOR A MAYOR.
+
+    ## Añadimos a los intervalos el -inf y el +inf. Se pueden concatenar listas así! como suma de listas!
+    umbrales = [-float("inf")] + umbrales + [float("inf")] ## Ahora tenemos [-inf, -100, -90, -80, inf]
+
+    ## Cogemos los valores de labels. Pero hay que darles la vuelta para que coincidan con los rangos!
+    orden_clases = ORDEN_CLASES[::-1] ## La lista desde el final, y coge todo "::"
+
+    rangos_df = pd.cut(rsrp, bins=umbrales, labels = orden_clases, right=False)
+
+    return rangos_df
