@@ -1,7 +1,5 @@
 # Drive Test Analyzer
 
-Python tool and local web app to analyse 4G/5G drive test logs: data cleaning, radio KPI analysis (RSRP, RSRQ, SNR, CQI), coverage maps and automated reporting.
-
 This repo is a Streamlit application which analyses drive-tests from the dataset "Raca et al., MMSys 2020, Cork, Ireland" [github.com/uccmisl/5gdataset](url), showing graphs, histograms and a map that highlights colour-codes RSRP coverage (Excellent/Good/Fair/Poor) along the routes.
 
 
