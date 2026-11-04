@@ -40,4 +40,47 @@ def clasificar_cobertura(rsrp: pd.Series) -> pd.Series:
 
     rangos_df = pd.cut(rsrp, bins=umbrales, labels = orden_clases, right=False)
 
-    return rangos_df
+    return rangos_df    
+
+
+# ═════════════════════════════ SEMANA 2 ═════════════════════════════
+
+def resumen_por_tramos(df: pd.DataFrame, columna: str, bins: list,
+                       metrica: str = "DL_Mbps") -> pd.DataFrame:
+    """EJERCICIO 7: resume `metrica` por tramos de `columna`.
+
+    Ejemplo: resumen_por_tramos(df, "SNR", [-inf, 0, 5, 10, inf])
+    agrupa las muestras en los tramos de SNR [-inf,0), [0,5), [5,10), [10,inf)
+    y, para cada tramo, calcula sobre la columna `metrica`:
+        'muestras' -> cuántos valores válidos (no nulos) hay
+        'mediana'  -> la mediana
+
+    Salida: un DataFrame con un tramo por fila (índice) y las columnas
+            'muestras' y 'mediana'. Los tramos vacíos NO deben aparecer.
+
+    Pistas: pd.cut (con right=False, igual que en clasificar_cobertura),
+    groupby sobre el resultado de pd.cut (parámetro observed=True),
+    .agg con nombres propios.
+    """
+    raise NotImplementedError
+
+
+def detectar_handovers(df: pd.DataFrame) -> pd.DataFrame:
+    """EJERCICIO 8: detecta los cambios de celda servidora (CellID).
+
+    Un handover es una muestra cuyo CellID es distinto del de la muestra
+    ANTERIOR del MISMO fichero (cada fichero es un recorrido distinto:
+    la última muestra de un fichero y la primera del siguiente no tienen
+    nada que ver).
+
+    Salida: un DataFrame con UNA FILA POR HANDOVER y estas columnas:
+        'fichero', 'Timestamp', 'Latitude', 'Longitude',
+        'CellID_anterior', 'CellID',
+        'NetworkMode_anterior', 'NetworkMode', 'RSRP'
+
+    Pistas: ordenar por fichero y Timestamp (sort_values con una lista),
+    groupby("fichero")["CellID"].shift() para obtener el valor anterior
+    dentro de cada fichero, una máscara para quedarte con los cambios.
+    Ojo con la primera muestra de cada fichero: su "anterior" es NaN.
+    """
+    raise NotImplementedError
